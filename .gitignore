@@ -1,0 +1,146 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║  ai-agents ROOT .gitignore                                             ║
+# ║  Purpose: BLOCK ALL SECRETS from public GitHub                         ║
+# ║  Sub-projects (OpenAgentd, browser-harness) have their own .gitignore  ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🔴 SECRETS & API KEYS — HIGHEST PRIORITY
+# ══════════════════════════════════════════════════════════════════════════
+# Block ALL .env files everywhere (they contain API keys!)
+**/.env
+!**/.env.example
+
+# Private keys, certificates, credentials
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/credentials.json
+**/token.json
+**/gcp-login.json
+**/secrets.env
+**/.tauri-keys/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 VIRTUAL ENVIRONMENTS — Too large, contains binaries
+# ══════════════════════════════════════════════════════════════════════════
+**/.venv/
+**/venv/
+**/env/
+**/.venv*/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 NODE MODULES — Too large
+# ══════════════════════════════════════════════════════════════════════════
+**/node_modules/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 PYTHON CACHE & BUILD ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.egg-info/
+**/*.egg
+**/dist/
+**/build/
+**/.ruff_cache/
+**/.mypy_cache/
+**/.pytest_cache/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 IDE / EDITOR
+# ══════════════════════════════════════════════════════════════════════════
+**/.idea/
+**/.vscode/
+**/.cursor*/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 DATABASE FILES — Contains user data
+# ══════════════════════════════════════════════════════════════════════════
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/*.db-journal
+**/*.sqlite3
+**/*.duckdb
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 LOG FILES
+# ══════════════════════════════════════════════════════════════════════════
+**/*.log
+**/logs/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 COVERAGE & TEST ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════
+**/.coverage
+**/.coverage.*
+**/htmlcov/
+**/coverage.xml
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 OS FILES
+# ══════════════════════════════════════════════════════════════════════════
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 OPENAGENTD RUNTIME DATA — User sessions, cache, memory
+# ══════════════════════════════════════════════════════════════════════════
+**/.openagentd/data/
+**/.openagentd/state/
+**/.openagentd/cache/
+**/.openagentd/sessions/
+**/.openagentd/memory/
+**/.openagentd/wiki/
+**/.openagentd/workspace/
+**/.openagentd/dev/
+**/.openagentd/evals/
+**/.openagentd/config/
+**/.tests/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 BROWSER-HARNESS RUNTIME DATA
+# ══════════════════════════════════════════════════════════════════════════
+browser-harness/.config/
+browser-harness/debug.log
+browser-harness/info.log
+browser-harness/saved_trajectories/
+browser-harness/AgentHistory*.json
+browser-harness/browser_cookies.json
+browser-harness/cookies.json
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🔴 HANDOVER FILES — Contain internal notes, paths, project context
+#    These are for AI-to-AI handover, not public consumption
+# ══════════════════════════════════════════════════════════════════════════
+handover_to_antigravity*.md
+handover_to_codex*.md
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🔴 RECOVERY DATA — Internal debugging snapshots
+# ══════════════════════════════════════════════════════════════════════════
+recovery/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 AGENT MEMORY — Contains per-project AI context snapshots
+# ══════════════════════════════════════════════════════════════════════════
+**/.agent/memory/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 DESKTOP/MOBILE BUILD ARTIFACTS
+# ══════════════════════════════════════════════════════════════════════════
+**/target/
+**/gen/
+**/sidecar-bundle/
+
+# ══════════════════════════════════════════════════════════════════════════
+# 🟡 MISC
+# ══════════════════════════════════════════════════════════════════════════
+**/chunks.jsonl
+**/stream_log.jsonl
+**/data.json
+**/.claude/

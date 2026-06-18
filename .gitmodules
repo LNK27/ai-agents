@@ -1,0 +1,6 @@
+[submodule "OpenAgentd"]
+	path = OpenAgentd
+	url = https://github.com/LNK27/OpenAgentd.git
+[submodule "browser-harness"]
+	path = browser-harness
+	url = https://github.com/LNK27/browser-harness.git
