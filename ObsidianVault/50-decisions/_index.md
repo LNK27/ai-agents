@@ -7,7 +7,7 @@ tags:
   - index
   - decisions
 created_at: 2026-05-21T17:10:00+07:00
-updated_at: 2026-05-21T17:10:00+07:00
+updated_at: 2026-08-13T11:38:03+07:00
 writer: system
 ---
 
@@ -21,6 +21,7 @@ Lưu trữ nhật ký các quyết định quan trọng (Architecture Decision R
 
 ## 📄 Danh sách ghi chú hiện tại
 - [[ADR-001-second-brain-architecture|ADR 001: Kiến trúc cốt lõi Second Brain v1]] - Quyết định định hình 14 nguyên tắc kiến trúc cốt lõi của Second Brain.
+- [[ADR-002-hermes-hybrid-integration|ADR 002: Tích hợp Hybrid cho Hermes Agent]] - Kế hoạch tích hợp Hermes Agent qua MCP và HTTP (vận hành và logic dữ liệu song song).
 
 ---
 [[MAP_OF_CONTENT|Xem Bản Đồ Tri Thức (MAP_OF_CONTENT)]]

@@ -2,6 +2,9 @@
 
 Tích hợp `NousResearch/hermes-agent` vào `OpenAgentd` theo mô hình **Hybrid**: vận hành qua MCP (lifecycle) và HTTP (data logic), bảo toàn Single Writer Policy (ADR-001 D8).
 
+> [!NOTE]
+> **Trạng thái sau audit 2026-08-13:** Đây vẫn là kế hoạch, chưa phải tính năng đã triển khai. Codebase hiện có Hermes proposal-only adapter, hàng đợi duyệt thủ công, read-only query và skill drafting; chưa có Bridge, auto-approve, active MCP registration, tests Bridge/auto-approve, hoặc ADR-003 sửa đổi D8. Những phần có sẵn không được coi là bằng chứng triển khai cho các component bên dưới.
+
 > [!WARNING]
 > **Changelog v4 → v5 — 3 lỗi kỹ thuật đã sửa qua 5 lượt phản biện:**
 >
@@ -184,8 +187,8 @@ Thêm entry cho hermes-bridge:
       "command": "uv",
       "args": ["run", "python", "scripts/hermes_mcp_bridge.py"],
       "env": {
-        "HERMES_BRIDGE_PORT": "${HERMES_BRIDGE_PORT:-8090}",
-        "HERMES_API_URL": "http://localhost:${HERMES_API_PORT:-8642}",
+        "HERMES_BRIDGE_PORT": "${HERMES_BRIDGE_PORT}",
+        "HERMES_API_URL": "${HERMES_API_URL}",
         "HERMES_API_KEY": "${HERMES_API_KEY}"
       },
       "enabled": true
@@ -193,6 +196,11 @@ Thêm entry cho hermes-bridge:
   }
 }
 ```
+
+> [!CAUTION]
+> `OpenAgentd` chỉ resolve `${VAR}` và không hỗ trợ bash-style `${VAR:-default}`. Giá trị mặc định phải được cung cấp bởi code/configuration của Bridge (ví dụ `8090` và `http://localhost:8642`), không được nhúng trong `mcp.json`.
+
+**Startup retry reconciliation:** trước khi Bridge trả lỗi cho watchdog, `validate_upstream()` phải retry `ConnectError` tối đa ba lần, cách nhau hai giây; `401 Unauthorized` phải fail ngay. Việc này khớp với mục tiêu chống crash loop của kế hoạch tích hợp toàn diện. Khi dọn các task bị cancel, bắt `BaseException` quanh bước wait timeout nếu có xử lý exception, vì `asyncio.CancelledError` không kế thừa từ `Exception`.
 
 #### [MODIFY] [config.py](file:///D:/ai-agents/OpenAgentd/app/core/config.py)
 
