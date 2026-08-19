@@ -25,3 +25,5 @@ Nơi tiếp nhận tất cả các ghi chú thô, ý kiến, trích dẫn, hoặ
 
 ---
 [[MAP_OF_CONTENT|Xem Bản Đồ Tri Thức (MAP_OF_CONTENT)]]
+- [[smoke-live-20260819-053136|Smoke live OpenAgentd]] - note
+- [[wave-d-human-note|Wave D human note]] - note
