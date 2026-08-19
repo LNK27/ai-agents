@@ -1,15 +1,18 @@
 ---
 id: adr-001-second-brain-architecture
-title: "ADR 001: Kiến trúc cốt lõi Second Brain v1"
+title: 'ADR 001: Kiến trúc cốt lõi Second Brain v1'
 type: decision
 status: approved
 tags:
-  - decision
-  - adr
-  - architecture
-created_at: 2026-05-21T17:10:00+07:00
-updated_at: 2026-05-21T17:10:00+07:00
+- decision
+- adr
+- architecture
+created_at: 2026-05-21 17:10:00+07:00
+updated_at: 2026-05-21 17:10:00+07:00
 writer: system
+source_refs: []
+relations: []
+last_summarized_at: null
 ---
 
 # ADR 001: Định hình Kiến trúc cốt lõi Second Brain v1 (Roadmap v7)

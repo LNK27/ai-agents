@@ -1,15 +1,18 @@
 ---
 id: second-brain-project
-title: "Second Brain Project"
+title: Second Brain Project
 type: project
 status: active
 tags:
-  - project
-  - second-brain
-  - ai-agents
-created_at: 2026-05-21T17:10:00+07:00
-updated_at: 2026-08-13T11:38:03+07:00
+- project
+- second-brain
+- ai-agents
+created_at: 2026-05-21 17:10:00+07:00
+updated_at: 2026-08-13 11:38:03+07:00
 writer: system
+source_refs: []
+relations: []
+last_summarized_at: null
 ---
 
 # 🧠 Dự án Second Brain (Local-first AI Stack)

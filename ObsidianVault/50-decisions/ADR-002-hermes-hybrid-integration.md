@@ -1,3 +1,16 @@
+---
+id: ADR-002-hermes-hybrid-integration
+title: Hermes Agent Hybrid Integration — Implementation Plan v5
+type: note
+status: draft
+tags: []
+created_at: '2026-08-13T04:39:31.131333+00:00'
+updated_at: '2026-08-13T04:39:31.131333+00:00'
+source_refs: []
+relations: []
+last_summarized_at: null
+writer: human
+---
 # Hermes Agent Hybrid Integration — Implementation Plan v5
 
 Tích hợp `NousResearch/hermes-agent` vào `OpenAgentd` theo mô hình **Hybrid**: vận hành qua MCP (lifecycle) và HTTP (data logic), bảo toàn Single Writer Policy (ADR-001 D8).
